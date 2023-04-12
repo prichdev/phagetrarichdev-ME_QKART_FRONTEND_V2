@@ -15,12 +15,14 @@ import Header from "./Header";
 import "./Products.css";
 import ProductCard from "./ProductCard";
 import Cart, { generateCartItemsFrom, ItemQuantity } from "./Cart";
+
 // import generateCartItemsFrom from "./Cart"
 // Definition of Data Structures used
 /**
  * @typedef {Object} Product - Data on product available to buy
  *
  * @property {string} name - The name or title of the product
+
 
 /**
  * @typedef {Object} CartItem -  - Data on product added to cart
@@ -87,13 +89,8 @@ const Products = () => {
     try {
       setLoading(true);
       const datas = await axios.get(config.endpoint + "/products");
-      // console.log(datas);
       const mainData = datas.data;
-      // console.log("mainData", mainData);
-      // console.log("mainData",mainData);
-      // console.log("mainData",mainData);
       setProductData(mainData);
-      // console.log("Setdata", datas);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -105,19 +102,6 @@ const Products = () => {
       );
     }
   };
-  // console.log("data", data);
-
-  // console.log("====calling====")
-  // performAPICall()
-  // let obj = {
-  //   name: "Tan Leatherette Weekender Duffle",
-  //   category: "Fashion",
-  //   cost: 150,
-  //   rating: 4,
-  //   image:
-  //     "https://crio-directus-assets.s3.ap-south-1.amazonaws.com/ff071a1c-1099-48f9-9b03-f858ccc53832.png",
-  //   _id: "PmInA797xJhMIPti",
-  // };
   // TODO: CRIO_TASK_MODULE_PRODUCTS - Implement search logic
   /**
    * Definition for search handler
@@ -167,10 +151,6 @@ const Products = () => {
       performSearch(event.target.value);
     }, debounceTimeout);
   };
-
-  // useEffect(() => {
-  //   performAPICall();
-  // }, []);
 
   /**
    * Perform the API call to fetch the user's cart and return the response

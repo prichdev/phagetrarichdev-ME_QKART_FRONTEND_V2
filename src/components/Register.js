@@ -50,6 +50,7 @@ const Register = () => {
    */
 
   const register = async (formData) => {
+    // console.log("in register", formData);
     if (validateInput(formData)) {
       try {
         setLoading(true);
@@ -57,6 +58,7 @@ const Register = () => {
           username: formData.username,
           password: formData.password,
         });
+        // console.log("data", data, data.status, data.data);
         if (data.status === 201) {
           setLoading(false);
           enqueueSnackbar("Registered successfully", { variant: "success" });
@@ -84,7 +86,6 @@ const Register = () => {
       setLoading(false);
       return null;
     }
-    // });
   };
   // TODO: CRIO_TASK_MODULE_REGISTER - Implement user input validation logic
   /**
