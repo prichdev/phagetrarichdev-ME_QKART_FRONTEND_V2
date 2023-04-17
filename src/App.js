@@ -6,7 +6,7 @@ import Products from "./components/Products";
 import Checkout from "./components/Checkout";
 import Thanks from "./components/Thanks"
 export const config = {
-  endpoint: 'https://qkart-frontend-r73y.onrender.com/api/v1', //`http://${ipConfig.workspaceIp}:8082/api/v1`,
+  endpoint: `https://qkart-frontend1-9s8u.onrender.com`,
 };
 function App() {
   return (
